@@ -65,4 +65,38 @@ a, a:visited, a:hover {
   .hide-for-desktop {
     display: none;
   }
+}
+
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 40em) {
+  .coming-soon {
+    display: grid;
+    grid-template-areas: "logo hero" "conten hero";
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (min-width: 40em) {
+  .coming-soon .logo {
+    grid-area: logo;
+  }
+}
+@media (min-width: 40em) {
+  .coming-soon__content {
+    grid-area: conten;
+  }
+}
+@media (min-width: 40em) {
+  .coming-soon__picture {
+    grid-area: hero;
+  }
+}
+.coming-soon__picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */
