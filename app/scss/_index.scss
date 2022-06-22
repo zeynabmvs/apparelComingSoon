@@ -1,26 +1,25 @@
 .coming-soon {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-areas: "logo" 
+                        "hero" 
+                        " conten";
+
+    grid-template-rows: rem(84) auto auto;
+    grid-template-columns: 1fr;
+
     height: rem(800);
+
 
     @include breakpoint-up(medium) {
         display: grid;
         grid-template-areas: "logo hero"
             "conten hero";
-        grid-template-rows: 100px 300px;
-        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 100px auto;
+        grid-template-columns: 4fr 3fr;
     }
 
     .logo {
-        // height: rem(84);
-        max-width: 44%;
-
-        img {
-            max-width: 100%;
-            height: auto;
-            padding: rem(29) rem(32);
-
-        }
+        grid-area: logo;
 
         @include breakpoint-up(medium) {
             grid-area: logo;
@@ -29,52 +28,45 @@
 
     &__content {
         text-align: center;
+        grid-area: conten;
+        gap: rem(29);
+        padding-top: 66px;
+        padding-bottom: 90px;
 
         @include breakpoint-up(medium) {
-            grid-area: conten;
-            background-image: url('/images/bg-pattern-desktop.svg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
     }
 
-    .container {
-        padding: rem(60) rem(30);
-
-    }
-
-    &__title {
+    h1 {
         font-size: 53px;
         color: $darkGrayishRed;
         font-weight: 600;
-        margin: 0 0 rem(30) 0;
 
         span {
-            color: $softRed;
+            color: $desaturatedRed;
             font-weight: 300;
         }
     }
 
-    &__text {
-        color: $softRed;
-        margin-bottom: rem(39);
+    p {
+        color: $desaturatedRed;
     }
 
     &__form {}
 
-    &__picture {
+    &__hero {
+        grid-area: hero;
 
-        @include breakpoint-up(medium) {
-            grid-area: hero;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
-    &__picture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 }
 
 
@@ -170,4 +162,33 @@
             vertical-align: middle;
         }
     }
+}
+
+.container {
+
+    &-px {
+        padding-left: 33px;
+        padding-right: 33px;
+
+        @include breakpoint-up(medium) {
+            padding-left: 166px;
+            padding-right: 166px;
+        }
+    }
+
+    &-py {
+        padding-top: 66px;
+        padding-bottom: 66px;
+
+        @include breakpoint-up(medium) {
+            // padding-top: 166px;
+            // padding-bottom: 166px;
+        } 
+    }
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+     
 }

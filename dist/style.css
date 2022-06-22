@@ -34,8 +34,8 @@ a, a:visited, a:hover {
   text-decoration: none;
 }
 
-.container {
-  margin: 0 auto;
+h1 {
+  margin: 0;
 }
 
 .flex {
@@ -79,25 +79,22 @@ a, a:visited, a:hover {
 }
 
 .coming-soon {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "logo" "hero" " conten";
+  grid-template-rows: 5.25rem auto auto;
+  grid-template-columns: 1fr;
   height: 50rem;
 }
 @media (min-width: 40em) {
   .coming-soon {
     display: grid;
     grid-template-areas: "logo hero" "conten hero";
-    grid-template-rows: 100px 300px;
-    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 100px auto;
+    grid-template-columns: 4fr 3fr;
   }
 }
 .coming-soon .logo {
-  max-width: 44%;
-}
-.coming-soon .logo img {
-  max-width: 100%;
-  height: auto;
-  padding: 1.8125rem 2rem;
+  grid-area: logo;
 }
 @media (min-width: 40em) {
   .coming-soon .logo {
@@ -106,39 +103,34 @@ a, a:visited, a:hover {
 }
 .coming-soon__content {
   text-align: center;
+  grid-area: conten;
+  gap: 1.8125rem;
+  padding-top: 66px;
+  padding-bottom: 90px;
 }
 @media (min-width: 40em) {
   .coming-soon__content {
-    grid-area: conten;
-    background-image: url("/images/bg-pattern-desktop.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
-.coming-soon .container {
-  padding: 3.75rem 1.875rem;
-}
-.coming-soon__title {
+.coming-soon h1 {
   font-size: 53px;
   color: hsl(0deg, 6%, 24%);
   font-weight: 600;
-  margin: 0 0 1.875rem 0;
 }
-.coming-soon__title span {
-  color: hsl(0deg, 93%, 68%);
+.coming-soon h1 span {
+  color: hsl(0deg, 36%, 70%);
   font-weight: 300;
 }
-.coming-soon__text {
-  color: hsl(0deg, 93%, 68%);
-  margin-bottom: 2.4375rem;
+.coming-soon p {
+  color: hsl(0deg, 36%, 70%);
 }
-@media (min-width: 40em) {
-  .coming-soon__picture {
-    grid-area: hero;
-  }
+.coming-soon__hero {
+  grid-area: hero;
 }
-.coming-soon__picture img {
+.coming-soon__hero img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -234,4 +226,23 @@ a, a:visited, a:hover {
 }
 .newsletter__button svg {
   vertical-align: middle;
+}
+
+.container-px {
+  padding-left: 33px;
+  padding-right: 33px;
+}
+@media (min-width: 40em) {
+  .container-px {
+    padding-left: 166px;
+    padding-right: 166px;
+  }
+}
+.container-py {
+  padding-top: 66px;
+  padding-bottom: 66px;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
