@@ -40,11 +40,20 @@
           Add your email below to stay up-to-date with announcements and our launch deals.
         </p>
 
-        <form action="#" class="coming-soon__form">
-          <label for="email">Email</label><br>
-          <input type="text" id="idEmail" name="email" value="Email Address"><br>
-          <input type="submit" value="Submit">
+        <form class="newsletter" action="#" method="post">
+          <label class="sr-only newsletter__label" for="email">Email</label>
+          <div class="newsletter__grid">
+            
+            <input class="newsletter__email" type="email" id="idEmail" name="email" placeholder="Email Address" required maxlength="50" 
+            pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"><br>
+
+            <button class="newsletter__button" type="submit" name="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="20"><path fill="none" stroke="#FFF" stroke-width="2" d="M1 1l8.836 8.836L1 18.671"/></svg>
+            </button>
+            
+          </div>
         </form>
+
       </div>
     </div>
 
