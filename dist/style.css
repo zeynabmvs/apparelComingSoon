@@ -10,6 +10,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.0625rem;
 }
 body.noscroll {
   overflow: hidden;
@@ -70,6 +72,7 @@ a, a:visited, a:hover {
 .coming-soon {
   display: flex;
   flex-direction: column;
+  height: 50rem;
 }
 @media (min-width: 40em) {
   .coming-soon {
@@ -79,15 +82,47 @@ a, a:visited, a:hover {
     grid-template-columns: 2fr 1fr;
   }
 }
+.coming-soon .logo {
+  max-width: 44%;
+}
+.coming-soon .logo img {
+  max-width: 100%;
+  height: auto;
+  padding: 1.8125rem 2rem;
+}
 @media (min-width: 40em) {
   .coming-soon .logo {
     grid-area: logo;
   }
 }
+.coming-soon__content {
+  text-align: center;
+}
 @media (min-width: 40em) {
   .coming-soon__content {
     grid-area: conten;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
+}
+.coming-soon .container {
+  padding: 3.75rem 1.875rem;
+}
+.coming-soon__title {
+  font-size: 53px;
+  color: hsl(0deg, 6%, 24%);
+  font-weight: 600;
+  margin: 0 0 1.875rem 0;
+}
+.coming-soon__title span {
+  color: hsl(0deg, 93%, 68%);
+  font-weight: 300;
+}
+.coming-soon__text {
+  color: hsl(0deg, 93%, 68%);
+  margin-bottom: 2.4375rem;
 }
 @media (min-width: 40em) {
   .coming-soon__picture {

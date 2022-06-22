@@ -1,6 +1,7 @@
 .coming-soon {
     display: flex;
     flex-direction: column;
+    height: rem(800);
 
     @include breakpoint-up(medium) {
         display: grid;
@@ -11,6 +12,15 @@
     }
 
     .logo {
+        // height: rem(84);
+        max-width: 44%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            padding: rem(29) rem(32);
+
+        }
 
         @include breakpoint-up(medium) {
             grid-area: logo;
@@ -18,22 +28,37 @@
     }
 
     &__content {
+        text-align: center;
 
         @include breakpoint-up(medium) {
             grid-area: conten;
+            background-image: url('/images/bg-pattern-desktop.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
     }
 
     .container {
+        padding: rem(60) rem(30);
 
     }
 
     &__title {
+        font-size: 53px;
+        color: $darkGrayishRed;
+        font-weight: 600;
+        margin: 0 0 rem(30) 0;
 
+        span {
+            color: $softRed;
+            font-weight: 300;
+        }
     }
 
     &__text {
-
+        color: $softRed;
+        margin-bottom: rem(39);
     }
 
     &__form {
