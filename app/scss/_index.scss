@@ -2,20 +2,18 @@
     display: grid;
     grid-template-areas: "logo" 
                         "hero" 
-                        " conten";
+                        "conten";
 
     grid-template-rows: rem(84) auto auto;
     grid-template-columns: 1fr;
 
-    height: rem(800);
-
-
     @include breakpoint-up(medium) {
         display: grid;
-        grid-template-areas: "logo hero"
-            "conten hero";
         grid-template-rows: 1fr 4fr;
         grid-template-columns: 4fr 3fr;
+        // grid-template-columns: 1fr 1fr;
+        grid-template-areas: "logo hero"
+                            "conten hero";
     }
 
     .logo {
@@ -38,10 +36,14 @@
             font-size: 53px;
             color: $darkGrayishRed;
             font-weight: 600;
-            letter-spacing: 13px;
-            
+            letter-spacing: 14px;
+            line-height: 1.1;
+
             @include breakpoint-up(medium) {
                 width: 54%;
+                font-size: 61px;
+                letter-spacing: 18px;
+                line-height: 1.3;
             }
     
             span {
@@ -73,7 +75,6 @@
 
     &__grid {
         display: inline-flex;
-        position: relative;
     }
 
     &__email {
@@ -119,18 +120,16 @@
         background-image: $gradientRed;
         border: none;
         justify-content: center;
-        position: absolute;
-        left: 232px;
+        margin-left: -50px;
         box-shadow: 5px 31px 45px -7px $desaturatedRed;
 
         @include breakpoint-up(medium) {
             width: 100px;
             height: 56px;
             border-radius: 28px;
-            left: 322px;
         }
 
-        &::before {
+        &::after {
             content: "";
             position: absolute;
             top: 0;
@@ -152,7 +151,7 @@
         }
 
         &:hover {
-            &::before {
+            &::after {
                 opacity: 1;
             }
         }
@@ -169,7 +168,13 @@
         padding-left: 33px;
         padding-right: 33px;
 
+        
         @include breakpoint-up(medium) {
+            padding-left: 66px;
+            padding-right: 66px;
+        }
+
+        @include breakpoint-up(large) {
             padding-left: 166px;
             padding-right: 166px;
         }
@@ -180,8 +185,6 @@
         padding-bottom: 66px;
 
         @include breakpoint-up(medium) {
-            // padding-top: 166px;
-            // padding-bottom: 166px;
         } 
     }
 }
