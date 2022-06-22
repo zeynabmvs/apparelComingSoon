@@ -41,7 +41,6 @@ h1 {
 }
 
 // Flexbox
-
 .flex {
     display: flex;  
       
@@ -104,4 +103,10 @@ h1 {
     width:1px;
     height:1px;
     overflow:hidden;
-    }
+}
+
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+     
+}

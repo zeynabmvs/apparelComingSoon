@@ -78,6 +78,11 @@ h1 {
   overflow: hidden;
 }
 
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 .coming-soon {
   display: grid;
   grid-template-areas: "logo" "hero" " conten";
@@ -89,17 +94,12 @@ h1 {
   .coming-soon {
     display: grid;
     grid-template-areas: "logo hero" "conten hero";
-    grid-template-rows: 100px auto;
+    grid-template-rows: 1fr 4fr;
     grid-template-columns: 4fr 3fr;
   }
 }
 .coming-soon .logo {
   grid-area: logo;
-}
-@media (min-width: 40em) {
-  .coming-soon .logo {
-    grid-area: logo;
-  }
 }
 .coming-soon__content {
   text-align: center;
@@ -110,22 +110,28 @@ h1 {
 }
 @media (min-width: 40em) {
   .coming-soon__content {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    text-align: left;
+    gap: 2.6875rem;
   }
 }
-.coming-soon h1 {
+.coming-soon__content h1 {
   font-size: 53px;
   color: hsl(0deg, 6%, 24%);
   font-weight: 600;
+  letter-spacing: 13px;
 }
-.coming-soon h1 span {
+@media (min-width: 40em) {
+  .coming-soon__content h1 {
+    width: 54%;
+  }
+}
+.coming-soon__content h1 span {
   color: hsl(0deg, 36%, 70%);
   font-weight: 300;
 }
-.coming-soon p {
+.coming-soon__content p {
   color: hsl(0deg, 36%, 70%);
+  line-height: 1.5;
 }
 .coming-soon__hero {
   grid-area: hero;
@@ -241,8 +247,4 @@ h1 {
 .container-py {
   padding-top: 66px;
   padding-bottom: 66px;
-}
-.img-responsive {
-  max-width: 100%;
-  height: auto;
 }/*# sourceMappingURL=style.css.map */

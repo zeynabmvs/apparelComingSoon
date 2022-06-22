@@ -14,16 +14,12 @@
         display: grid;
         grid-template-areas: "logo hero"
             "conten hero";
-        grid-template-rows: 100px auto;
+        grid-template-rows: 1fr 4fr;
         grid-template-columns: 4fr 3fr;
     }
 
     .logo {
         grid-area: logo;
-
-        @include breakpoint-up(medium) {
-            grid-area: logo;
-        }
     }
 
     &__content {
@@ -34,28 +30,31 @@
         padding-bottom: 90px;
 
         @include breakpoint-up(medium) {
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            text-align: left;
+            gap: rem(43);
         }
-    }
 
-    h1 {
-        font-size: 53px;
-        color: $darkGrayishRed;
-        font-weight: 600;
-
-        span {
+        h1 {
+            font-size: 53px;
+            color: $darkGrayishRed;
+            font-weight: 600;
+            letter-spacing: 13px;
+            
+            @include breakpoint-up(medium) {
+                width: 54%;
+            }
+    
+            span {
+                color: $desaturatedRed;
+                font-weight: 300;
+            }
+        }
+    
+        p {
             color: $desaturatedRed;
-            font-weight: 300;
+            line-height: 1.5;
         }
     }
-
-    p {
-        color: $desaturatedRed;
-    }
-
-    &__form {}
 
     &__hero {
         grid-area: hero;
@@ -187,8 +186,3 @@
     }
 }
 
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-     
-}
